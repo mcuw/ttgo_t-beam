@@ -1,0 +1,22 @@
+{
+  "name": "T-Beam",
+  "version": "0.1.0",
+  "keywords": "ttgo,t-beam",
+  "description": "A autonom Arduino TTGO T-Beam v1.1 library",
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/mcuw/ttgo_t-beam.git"
+  },
+  "authors":
+  [
+    {
+       "name": "Van Vuong Ngo",
+       "email": "112967559+mcuw@users.noreply.github.com",
+       "url": "https://github.com/mcuw/Tbeam",
+       "maintainer": true
+    }
+  ],
+  "frameworks": "arduino",
+  "platforms": "espressif32"
+}
