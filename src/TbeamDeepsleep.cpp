@@ -1,5 +1,5 @@
-#include "TbeamDeepsleep.h"
 #include <esp_sleep.h>
+#include "TbeamDeepsleep.h"
 
 RTC_DATA_ATTR int rtc = 0;
 
@@ -50,7 +50,7 @@ void TbeamDeepsleep::hibernate(uint32_t seconds) {
       //   ledIndex = EEPROM.read(0); // <-- the value stored at address 0x0000 is assigned to ledIndex
       // }
     // 
-    // here in hiberante()
+    // here in hibernate()
     // EEPROM.write(0, ledIndex);
     // EEPROM.commit();
 

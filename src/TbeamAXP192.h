@@ -3,6 +3,7 @@
 
 #include <Arduino.h>
 #include "TbeamDeepsleep.h"
+#include "types.h"
 
 #ifndef AXP192_ADDRESS
   #define AXP192_ADDRESS          0x34
@@ -34,9 +35,8 @@ class TbeamAXP192 {
     void update();
 
     void powerGPS(bool en);
-    void powerLed(bool en);
-
-    void hibernate(uint32_t seconds = 1);
+    int powerLed(bool en);
+    int powerLed(TBeamChgLedMode mode = TBEAM_LED_LOW_LEVEL);
 
   private:
     static bool scanI2C(byte axp192Address);
