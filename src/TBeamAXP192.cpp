@@ -1,20 +1,20 @@
 #include <Wire.h>
 #include <axp20x.h>
-#include "TbeamAXP192.h"
+#include "TBeamAXP192.h"
 
-TbeamAXP192::TbeamAXP192()
+TBeamAXP192::TBeamAXP192()
 {
   axp = new AXP20X_Class();
 }
 
-TbeamAXP192::~TbeamAXP192()
+TBeamAXP192::~TBeamAXP192()
 {
   delete axp;
 }
 
-bool TbeamAXP192::begin(bool enGPS)
+bool TBeamAXP192::begin(bool enGPS)
 {
-  if (!TbeamAXP192::scanI2C(AXP192_ADDRESS))
+  if (!TBeamAXP192::scanI2C(AXP192_ADDRESS))
   {
     Serial.println(F("Could not found AXP192 PMU!"));
     return false;
@@ -67,7 +67,7 @@ bool TbeamAXP192::begin(bool enGPS)
   return true;
 }
 
-void TbeamAXP192::update()
+void TBeamAXP192::update()
 {
   // Serial.println(axp->getBattChargeCurrent());
   // float v = axp->getVbusVoltage();
@@ -83,7 +83,7 @@ void TbeamAXP192::update()
   // Serial.println(axp->getAcinCurrent());
 }
 
-bool TbeamAXP192::scanI2C(byte axp192Address)
+bool TBeamAXP192::scanI2C(byte axp192Address)
 {
   Wire.beginTransmission(axp192Address);
   byte err = Wire.endTransmission();
@@ -98,17 +98,17 @@ bool TbeamAXP192::scanI2C(byte axp192Address)
   return false;
 }
 
-void TbeamAXP192::powerGPS(bool en)
+void TBeamAXP192::powerGPS(bool en)
 {
   axp->setPowerOutPut(AXP192_LDO3, en ? AXP202_ON : AXP202_OFF); // AXP192_LDO3 = GPS power
 }
 
-int TbeamAXP192::powerLed(bool en)
+int TBeamAXP192::powerLed(bool en)
 {
   return axp->setChgLEDMode(en ? AXP20X_LED_LOW_LEVEL : AXP20X_LED_OFF);
 }
 
-int TbeamAXP192::powerLed(TBeamChgLedMode mode)
+int TBeamAXP192::powerLed(TBeamChgLedMode mode)
 {
   switch (mode)
   {

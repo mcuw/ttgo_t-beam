@@ -1,7 +1,7 @@
 # Syntax Coloring Map
 
 ## Datatypes (KEYWORD1)
-Tbeam KEYWORD1
+TBeam KEYWORD1
 
 ## Methods and Functions (KEYWORD2)
 begin KEYWORD2

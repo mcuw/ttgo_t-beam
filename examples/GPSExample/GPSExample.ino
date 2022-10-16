@@ -1,7 +1,7 @@
 #include <Arduino.h>
-#include <Tbeam.h>
+#include <TBeam.h>
 
-Tbeam tbeam;
+TBeam tbeam;
 
 void setup() {
   // tbeam.begin(true); // to enable GPS on begin
@@ -11,7 +11,7 @@ void setup() {
 void loop() {
   tbeam.powerGPS();
 
-  TbeamGPS gps = tbeam.getGPS();
+  TBeamGPS gps = tbeam.getGPS();
   const satellites = 0;
 
   do {

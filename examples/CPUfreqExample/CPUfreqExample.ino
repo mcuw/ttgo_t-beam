@@ -1,11 +1,11 @@
 #include <Arduino.h>
-#include <Tbeam.h>
+#include <TBeam.h>
 
 // default TBEAM_CPU_20 for low energy consumption
-// Tbeam tbeam();
+// TBeam tbeam();
 
 // use minimum TBEAM_CPU_80 when WiFi is needed
-Tbeam tbeam(TBEAM_CPU_80);
+TBeam tbeam(TBEAM_CPU_80);
 
 void setup() {
   tbeam.begin();

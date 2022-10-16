@@ -2,7 +2,7 @@
 #define T_BEAM_AXP192_H
 
 #include <Arduino.h>
-#include "TbeamDeepsleep.h"
+#include "TBeamDeepsleep.h"
 #include "types.h"
 
 #ifndef AXP192_ADDRESS
@@ -18,7 +18,7 @@ class AXP20X_Class;
  * usage:
  * 
  * ```
-TbeamAXP192 axp;
+TBeamAXP192 axp;
 
 void setup() {
   Wire.begin(SDA, SCL);
@@ -26,10 +26,10 @@ void setup() {
 }
 ```
  */
-class TbeamAXP192 {
+class TBeamAXP192 {
   public:
-    TbeamAXP192();
-    ~TbeamAXP192();
+    TBeamAXP192();
+    ~TBeamAXP192();
 
     bool begin(bool enGPS = false);
     void update();
@@ -41,7 +41,7 @@ class TbeamAXP192 {
   private:
     static bool scanI2C(byte axp192Address);
     AXP20X_Class * axp;
-    TbeamDeepsleep deepsleep;
+    TBeamDeepsleep deepsleep;
 };
 
 #endif

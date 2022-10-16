@@ -4,10 +4,10 @@
 #include <Arduino.h>
 #include <TinyGPS++.h>
 
-class TbeamGPS {
+class TBeamGPS {
   public:
-    TbeamGPS();
-    ~TbeamGPS();
+    TBeamGPS();
+    ~TBeamGPS();
 
     void begin();
     void update();

@@ -3,10 +3,10 @@
 
 #include <Arduino.h>
 
-class TbeamDeepsleep {
+class TBeamDeepsleep {
   public:
-    TbeamDeepsleep();
-    ~TbeamDeepsleep();
+    TBeamDeepsleep();
+    ~TBeamDeepsleep();
 
     static void sleepInterrupt(uint8_t gpio, uint8_t mode);
     static void sleepInterruptMask(uint64_t mask, uint8_t mode);

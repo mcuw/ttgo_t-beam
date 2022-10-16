@@ -1,10 +1,10 @@
-#include "TbeamButton.h"
+#include "TBeamButton.h"
 
-TbeamButton::TbeamButton(byte buttonPin) 
+TBeamButton::TBeamButton(byte buttonPin) 
   : buttonPin(buttonPin) {
   pinMode(buttonPin, INPUT_PULLDOWN);
 }
 
-bool TbeamButton::isPressed() {
+bool TBeamButton::isPressed() {
   return digitalRead(buttonPin) == LOW;
 }

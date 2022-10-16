@@ -1,18 +1,18 @@
 #include <SPI.h>
 #include <Wire.h>
-#include "Tbeam.h"
+#include "TBeam.h"
 
-Tbeam::Tbeam(TbeamCPUfreqMhz cpuFreqMhz) : beginState(TBEAM_OK)
+TBeam::TBeam(TBeamCPUfreqMhz cpuFreqMhz) : beginState(TBEAM_OK)
 {
   initialCpuFreqMhz = getCpuFrequencyMhz();
   setCpuFrequencyMhz(cpuFreqMhz);
 }
 
-Tbeam::~Tbeam() {
+TBeam::~TBeam() {
   setCpuFrequencyMhz(initialCpuFreqMhz);
 }
 
-int Tbeam::begin(bool enGPS) {
+int TBeam::begin(bool enGPS) {
   // when calling Wire.begin
   // you have to ensure that the first value is an int type
   // because Wire begin() overwrites is error prone
@@ -30,7 +30,7 @@ int Tbeam::begin(bool enGPS) {
   return TBEAM_OK;
 }
 
-void Tbeam::update() {
+void TBeam::update() {
 #if defined(LILYGO_TBeam_V1_0) || defined(LILYGO_TBeam_V1_1)
   if (beginState != TBEAM_AXP_NOT_FOUND) {
     axp.update();
@@ -38,15 +38,15 @@ void Tbeam::update() {
 #endif
 }
 
-bool Tbeam::isButtonPressed() {
+bool TBeam::isButtonPressed() {
   return button.isPressed();
 }
 
-void Tbeam::hibernate(uint32_t seconds) {
+void TBeam::hibernate(uint32_t seconds) {
   deepsleep.hibernate(seconds);
 }
 
-void Tbeam::powerGPS(bool en) {
+void TBeam::powerGPS(bool en) {
 #if defined(LILYGO_TBeam_V1_0) || defined(LILYGO_TBeam_V1_1)
   axp.powerGPS(en);
 #endif
@@ -56,18 +56,18 @@ void Tbeam::powerGPS(bool en) {
   }
 }
 
-int Tbeam::powerLed(bool en) {
+int TBeam::powerLed(bool en) {
 #if defined(LILYGO_TBeam_V1_0) || defined(LILYGO_TBeam_V1_1)
   return axp.powerLed(en);
 #endif
 }
 
-int Tbeam::powerLed(TBeamChgLedMode mode) {
+int TBeam::powerLed(TBeamChgLedMode mode) {
 #if defined(LILYGO_TBeam_V1_0) || defined(LILYGO_TBeam_V1_1)
   return axp.powerLed(mode);
 #endif
 }
 
-void Tbeam::sleepSeconds(uint32_t seconds) {
+void TBeam::sleepSeconds(uint32_t seconds) {
   deepsleep.sleepSeconds(seconds);
 }

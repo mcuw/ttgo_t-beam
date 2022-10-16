@@ -1,20 +1,20 @@
-#include "TbeamGPS.h"
+#include "TBeamGPS.h"
 
 // see https://github.com/LilyGO/TTGO-T-Beam/blob/master/GPS/GPS.ino
-TbeamGPS::TbeamGPS(): isActive(false) {
+TBeamGPS::TBeamGPS(): isActive(false) {
 }
 
-TbeamGPS::~TbeamGPS() {
+TBeamGPS::~TBeamGPS() {
 }
 
-void TbeamGPS::begin() {
+void TBeamGPS::begin() {
   isActive = true;
 
   //TODO pins depend on board
   Serial1.begin(9600, SERIAL_8N1, 12, 34);  // t-beam v0.7 TX=15
 }
 
-void TbeamGPS::update() {
+void TBeamGPS::update() {
   if (!isActive) {
     return;
   }
@@ -23,7 +23,7 @@ void TbeamGPS::update() {
   smartDelay(2000);
 }
 
-void TbeamGPS::smartDelay(unsigned long ms)                
+void TBeamGPS::smartDelay(unsigned long ms)                
 {
   unsigned long start = millis();
   do {
@@ -33,22 +33,22 @@ void TbeamGPS::smartDelay(unsigned long ms)
   } while (millis() - start < ms);
 }
 
-TinyGPSInteger TbeamGPS::getSatellites() {
+TinyGPSInteger TBeamGPS::getSatellites() {
   return gps.satellites;
 }
 
-TinyGPSTime TbeamGPS::getTime() {
+TinyGPSTime TBeamGPS::getTime() {
   return gps.time;
 }
 
-TinyGPSLocation TbeamGPS::getLocation() {
+TinyGPSLocation TBeamGPS::getLocation() {
   return gps.location;
 }
 
-TinyGPSAltitude TbeamGPS::getAltitude() {
+TinyGPSAltitude TBeamGPS::getAltitude() {
   return gps.altitude;
 }
 
-void TbeamGPS::setActive(bool en) {
+void TBeamGPS::setActive(bool en) {
   isActive = en;
 }

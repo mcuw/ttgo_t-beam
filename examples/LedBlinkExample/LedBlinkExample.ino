@@ -1,7 +1,7 @@
 #include <Arduino.h>
-#include <Tbeam.h>
+#include <TBeam.h>
 
-Tbeam tbeam;
+TBeam tbeam;
 
 void setup() {
   tbeam.begin(); // optional GPS parameter to enable on start - disabled as default

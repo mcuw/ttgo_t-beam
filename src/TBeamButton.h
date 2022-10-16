@@ -9,7 +9,7 @@
  * usage:
  * 
  * ```
-TbeamButton btn;
+TBeamButton btn;
 
 void loop() {
   if (btn.isPressed()){
@@ -21,10 +21,10 @@ void loop() {
 }
 ```
  */
-class TbeamButton {
+class TBeamButton {
   public:
-    TbeamButton(byte buttonPin = PIN_SW1);
-    ~TbeamButton() {};
+    TBeamButton(byte buttonPin = PIN_SW1);
+    ~TBeamButton() {};
 
     bool isPressed();
 
